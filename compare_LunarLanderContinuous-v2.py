@@ -18,6 +18,7 @@ class A3CWorker:
             self.stats = []
             self.c_optimizer = tf.train.AdamOptimizer(critics_lr)
             self.a_optimizer = tf.train.AdamOptimizer(actor_lr)
+            # 添加replay experience
             if name == global_name2:
                 self.replay_size = 4000   # replay大小
                 self.cur_size = 0   # 表示当前replay大小
@@ -29,14 +30,14 @@ class A3CWorker:
         self.lamb = lamb
         self.actor_lr = actor_lr
         self.critics_lr = critics_lr
-        # 非中心网络加载环境
+        # 非全局网络加载环境
         if name != global_name and name != global_name2:
             self.env = gym.make("LunarLanderContinuous-v2").unwrapped
         with tf.variable_scope(name):
             self._build_model()
         self.a_params = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope=name + '/actor')
         self.c_params = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope=name + '/critics')
-        # 非中心网络可以有pull 和 push 功能
+        # 非全局网络可以有pull 和 push 功能
         if name != global_name and name != global_name2:
             self.pull_a_params_op = [l.assign(g) for l, g in zip(self.a_params, self.gAC.a_params)]
             self.pull_c_params_op = [l.assign(g) for l, g in zip(self.c_params, self.gAC.c_params)]
@@ -66,10 +67,6 @@ class A3CWorker:
                 activation_fn=None,
                 weights_initializer=tf.contrib.layers.xavier_initializer()
             )
-            # # 此时为(3,)
-            # self.critics = tf.squeeze(self.critics)
-            # # 变成(3,1)
-            # self.critics = tf.expand_dims(self.critics, axis=-1)
 
         # build actor net
         with tf.variable_scope('actor'):
@@ -85,9 +82,6 @@ class A3CWorker:
                 activation_fn=None,
                 weights_initializer=tf.contrib.layers.xavier_initializer()
             )
-            # 此时mu为1*1 矩阵 其维度应变为1
-            # mu = tf.squeeze(mu)
-            # self.mu = tf.expand_dims(mu, axis=-1)
 
             self.sigma = tf.contrib.layers.fully_connected(
                 inputs=f1,
@@ -98,7 +92,7 @@ class A3CWorker:
 
             self.norm_dist = tf.contrib.distributions.Normal(self.mu, self.sigma)
             action = self.norm_dist.sample(1)
-            # MoutainCarContinuous环境中 action 最低为-1  最高为1
+            # LunarLanderContinuous环境中 action 最低为[-1,-1]  最高为[1,1]
             self.action = tf.clip_by_value(action, [-1, -1], [1, 1])
 
         # critics op
@@ -164,6 +158,7 @@ class A3CWorker:
                     V_target.append(R)
                 V_target.reverse()
 
+                # 添加到replay experience
                 if self.gAC.name == global_name2:
                     for i in range(len(V_target)):
                         item = []
@@ -172,6 +167,7 @@ class A3CWorker:
                         item.append(V_target[i])
                         self.add_to_replay(item)
                 self.push(buffer_s, buffer_a, V_target)
+                # 每过30步训练一次全局的critics net
                 if self.gAC.name == global_name2 and step % 30 == 0:
                     self.train_replay()
                 if done:
@@ -180,16 +176,14 @@ class A3CWorker:
 
             self.gAC.stats.append(reward_total)
             self.gAC.episodes += 1
-            # if np.mean(self.gAC.stats[-100:]) > 90 and len(self.gAC.stats) >= 101:
-            #     print(np.mean(self.gAC.stats[-100:]))
-            #     print("Solved")
+            # 输出回合数,本回合得分,最近100回合平均得分,本回合步数
             print("Episode: {}, name: {}, reward: {}, average:{}, step:{}.".format(self.gAC.episodes, self.gAC.name, reward_total, np.mean(self.gAC.stats[-100:]), step))
 
-    # 将中心部分的参数赋值给线程
+    # 将全局部分的参数赋值给局部
     def pull(self):
         SESS.run([self.pull_a_params_op, self.pull_c_params_op])
 
-    # 即用线程学到的经验，更新中心的参数
+    # 即用局部学到的经验，更新全局的参数
     def push(self, state, action, R):
 
         feed_dict = {
@@ -201,6 +195,7 @@ class A3CWorker:
         # print(SESS.run(self.a_loss, feed_dict))    output 3*1
         SESS.run([self.update_a_op, self.update_c_op], feed_dict=feed_dict)
 
+    # 添加到replay experience
     def add_to_replay(self, item):
         if self.gAC.cur_size < self.gAC.replay_size:
             self.gAC.replay.append(item)
@@ -210,6 +205,7 @@ class A3CWorker:
             self.gAC.cur_point += 1
             self.gAC.cur_point %= self.gAC.replay_size
 
+    # 抽3组数据训练一次全局的critics net
     def train_replay(self):
         if self.gAC.cur_size < 3:
             return
@@ -238,14 +234,14 @@ if __name__ == "__main__":
     GLOBAL_AC2 = A3CWorker(global_name2, lamb=lamb, actor_lr=actor_lr, critics_lr=critics_lr)
     workers = []
     for i in range(4):
-        i_name = 'W_%i' % i  # worker name
+        i_name = 'W_%i' % i
         if i < 2:
             workers.append(A3CWorker(i_name, gAC=GLOBAL_AC, lamb=lamb, actor_lr=actor_lr, critics_lr=critics_lr))
         else:
             workers.append(A3CWorker(i_name, gAC=GLOBAL_AC2, lamb=lamb, actor_lr=actor_lr, critics_lr=critics_lr))
     COORD = tf.train.Coordinator()
     SESS.run(tf.global_variables_initializer())
-    # 使得两个中心初始化参数一致
+    # 使得两个全局网络初始化参数一致
     pull_p_params_op = [l_p.assign(g_p) for l_p, g_p in zip(GLOBAL_AC2.a_params, GLOBAL_AC.a_params)]
     pull_v_params_op = [l_p.assign(g_p) for l_p, g_p in zip(GLOBAL_AC2.c_params, GLOBAL_AC.c_params)]
     SESS.run([pull_p_params_op, pull_v_params_op])

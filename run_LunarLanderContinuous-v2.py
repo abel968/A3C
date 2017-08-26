@@ -1,15 +1,20 @@
+# 直接运行可以看到训练后的效果
+# is_train 表示是否训练,若为True则进行训练, 否则读出保存参数进行test
+# display 为是否在训练时展示效果
+
 import tensorflow as tf
 import numpy as np
 import gym
 import threading
 import matplotlib.pyplot as plt
 
+is_train = False
 display = False
 Episodes = 2000
 gamma=0.99
 global_name = 'GLOBAL_NET'
 model_path = './save_para/Lunar.ckpt'
-is_tarin = False
+
 class A3CWorker:
     def __init__(self, name, sess=None, gAC=None, lamb=1e-5, actor_lr=1e-3, critics_lr=1e-3):
         if name == global_name:
@@ -27,9 +32,10 @@ class A3CWorker:
             self.env = gym.make("LunarLanderContinuous-v2").unwrapped
         with tf.variable_scope(name):
             self._build_model()
+        # 保存网络参数
         self.a_params = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope=name + '/actor')
         self.c_params = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope=name + '/critics')
-        # 非中心网络可以有pull 和 push 功能
+        # 非全局网络可以有pull 和 push 功能
         if name != global_name:
             self.pull_a_params_op = [l.assign(g) for l, g in zip(self.a_params, self.gAC.a_params)]
             self.pull_c_params_op = [l.assign(g) for l, g in zip(self.c_params, self.gAC.c_params)]
@@ -58,10 +64,6 @@ class A3CWorker:
                 activation_fn=None,
                 weights_initializer=tf.contrib.layers.xavier_initializer()
             )
-            # # 此时为(3,)
-            # self.critics = tf.squeeze(self.critics)
-            # # 变成(3,1)
-            # self.critics = tf.expand_dims(self.critics, axis=-1)
 
         # build actor net
         with tf.variable_scope('actor'):
@@ -77,9 +79,6 @@ class A3CWorker:
                 activation_fn=None,
                 weights_initializer=tf.contrib.layers.xavier_initializer()
             )
-            # 此时mu为1*1 矩阵 其维度应变为1
-            # mu = tf.squeeze(mu)
-            # self.mu = tf.expand_dims(mu, axis=-1)
 
             self.sigma = tf.contrib.layers.fully_connected(
                 inputs=f1,
@@ -163,16 +162,18 @@ class A3CWorker:
 
             self.gAC.stats.append(reward_total)
             self.gAC.episodes += 1
-            if np.mean(self.gAC.stats[-50:]) > 200 and len(self.gAC.stats) >= 101:
+            # 若最近50回合的得分超过210  则训练结束
+            if np.mean(self.gAC.stats[-50:]) > 210 and len(self.gAC.stats) >= 101:
                 print('successful train')
                 return
+            # 输出回合数,本回合得分,最近100回合平均得分,本回合步数
             print("Episode: {}, reward: {}, average:{}, step:{}.".format(self.gAC.episodes, reward_total, np.mean(self.gAC.stats[-100:]), step))
 
-    # 将中心部分的参数赋值给线程
+    # 将全局部分的参数赋值给局部
     def pull(self):
         self.sess.run([self.pull_a_params_op, self.pull_c_params_op])
 
-    # 即用线程学到的经验，更新中心的参数
+    # 即用局部学到的经验，更新全局的参数
     def push(self, state, action, R):
         feed_dict = {
             self.state: np.vstack(state),
@@ -186,18 +187,18 @@ class A3CWorker:
 if __name__ == "__main__":
     actor_lr, critics_lr, lamb, gamma = [0.0001, 0.0001, 0.00001, 0.99]
 
-    if is_tarin:
+    if is_train:
         with tf.Session() as sess:
             GLOBAL_AC = A3CWorker(global_name, sess=sess, lamb=lamb, actor_lr=actor_lr, critics_lr=critics_lr)
 
             workers = []
             for i in range(2):
-                i_name = 'W_%i' % i  # worker name
+                i_name = 'W_%i' % i
                 workers.append(A3CWorker(i_name, sess=sess, gAC=GLOBAL_AC, lamb=lamb, actor_lr=actor_lr, critics_lr=critics_lr))
             COORD = tf.train.Coordinator()
             saver = tf.train.Saver()
             sess.run(tf.global_variables_initializer())
-
+            # saver.restore(sess, model_path)
             worker_threads = []
             for worker in workers:
                 job = lambda: worker.work()
@@ -211,7 +212,7 @@ if __name__ == "__main__":
         plt.legend(loc='best')
         plt.xlabel('epidose')
         plt.ylabel('reward')
-        plt.title('MountaiCarContinuous-v0')
+        plt.title("LunarLanderContinuous-v2")
         plt.show()
     else:
         with tf.Session() as sess:

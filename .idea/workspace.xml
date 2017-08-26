@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="382f6aa2-0915-4fa8-ab67-71a9afd0016a" name="Default" comment="" />
+    <list default="true" id="382f6aa2-0915-4fa8-ab67-71a9afd0016a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/save_para/Lunar.ckpt.data-00000-of-00001" afterPath="$PROJECT_DIR$/save_para/Lunar.ckpt.data-00000-of-00001" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/save_para/Lunar.ckpt.index" afterPath="$PROJECT_DIR$/save_para/Lunar.ckpt.index" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/save_para/Lunar.ckpt.meta" afterPath="$PROJECT_DIR$/save_para/Lunar.ckpt.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compare_LunarLanderContinuous-v2.py" afterPath="$PROJECT_DIR$/compare_LunarLanderContinuous-v2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/compare_MountaiCarContinuous-v0.py" afterPath="$PROJECT_DIR$/compare_MountaiCarContinuous-v0.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_LunarLanderContinuous-v2.py" afterPath="$PROJECT_DIR$/run_LunarLanderContinuous-v2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_MoutainCarContiunuous_v0.py" afterPath="$PROJECT_DIR$/run_MoutainCarContiunuous_v0.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +24,7 @@
     <SUITE FILE_PATH="coverage/A3C$test.coverage" NAME="test Coverage Results" MODIFIED="1503668105068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/A3C$1111.coverage" NAME="1111 Coverage Results" MODIFIED="1503654347859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/A3C$run_Mountain.coverage" NAME="run_Mountain Coverage Results" MODIFIED="1501903023879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/A3C$test_LunarLanderContinuous_v2.coverage" NAME="test_LunarLanderContinuous-v2 Coverage Results" MODIFIED="1503711318697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/A3C$test_LunarLanderContinuous_v2.coverage" NAME="test_LunarLanderContinuous-v2 Coverage Results" MODIFIED="1503716521370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/A3C$compare_LunarLanderContinuous_v2.coverage" NAME="compare_LunarLanderContinuous-v2 Coverage Results" MODIFIED="1503711093341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/A3C$test2_update2.coverage" NAME="test2_update2 Coverage Results" MODIFIED="1502179458625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/A3C$run_MoutainCarContiunuous_v0.coverage" NAME="run_MoutainCarContiunuous_v0 Coverage Results" MODIFIED="1503711175261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -28,45 +37,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="compare_MountaiCarContinuous-v0.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/compare_MountaiCarContinuous-v0.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="971">
-              <caret line="245" column="12" lean-forward="false" selection-start-line="245" selection-start-column="12" selection-end-line="245" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#612#826#0" expanded="false" />
-                <element signature="e#1489#2024#0" expanded="false" />
-                <element signature="e#2161#4749#0" expanded="false" />
-                <element signature="e#2488#3141#0" expanded="false" />
-                <element signature="e#3222#4331#0" expanded="false" />
-                <element signature="e#4814#4896#0" expanded="false" />
-                <element signature="e#4953#5034#0" expanded="false" />
-                <element signature="e#5064#7408#0" expanded="false" />
-                <element signature="e#7452#7508#0" expanded="false" />
-                <element signature="e#7581#7939#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="run_MoutainCarContiunuous_v0.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_MoutainCarContiunuous_v0.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="-1249">
+              <caret line="192" column="35" lean-forward="false" selection-start-line="192" selection-start-column="35" selection-end-line="192" selection-end-column="35" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#251#6984#0" expanded="false" />
-                <element signature="e#385#560#0" expanded="false" />
-                <element signature="e#1178#1713#0" expanded="false" />
-                <element signature="e#2078#2731#0" expanded="false" />
-                <element signature="e#2812#3921#0" expanded="false" />
-                <element signature="e#4404#4491#0" expanded="false" />
-                <element signature="e#4548#4634#0" expanded="false" />
-                <element signature="e#4664#6573#0" expanded="false" />
-                <element signature="e#6617#6678#0" expanded="false" />
-                <element signature="e#6750#6984#0" expanded="false" />
+                <element signature="e#86#109#0" expanded="true" />
+                <element signature="e#472#647#0" expanded="false" />
+                <element signature="e#1282#1817#0" expanded="false" />
+                <element signature="e#4219#4306#0" expanded="false" />
+                <element signature="e#4363#4449#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -75,43 +56,55 @@
       <file leaf-file-name="run_LunarLanderContinuous-v2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_LunarLanderContinuous-v2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="174" column="23" lean-forward="true" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
+            <state relative-caret-position="220">
+              <caret line="199" column="18" lean-forward="true" selection-start-line="199" selection-start-column="18" selection-end-line="199" selection-end-column="18" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#348#1712#0" expanded="false" />
-                <element signature="e#384#559#0" expanded="false" />
-                <element signature="e#2077#2730#0" expanded="false" />
-                <element signature="e#2811#3929#0" expanded="false" />
-                <element signature="e#4412#4499#0" expanded="false" />
-                <element signature="e#4556#4642#0" expanded="false" />
-                <element signature="e#6877#6938#0" expanded="false" />
-                <element signature="e#7373#8485#0" expanded="false" />
-                <element signature="e#8504#9669#0" expanded="false" />
+                <element signature="e#86#109#0" expanded="true" />
+                <element signature="e#471#646#0" expanded="false" />
+                <element signature="e#1281#1816#0" expanded="false" />
+                <element signature="e#4227#4314#0" expanded="false" />
+                <element signature="e#4371#4457#0" expanded="false" />
+                <element signature="e#4487#6729#0" expanded="false" />
+                <element signature="e#4708#6265#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="compare_LunarLanderContinuous-v2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compare_LunarLanderContinuous-v2.py">
+      <file leaf-file-name="compare_MountaiCarContinuous-v0.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compare_MountaiCarContinuous-v0.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="267" column="23" lean-forward="true" selection-start-line="267" selection-start-column="23" selection-end-line="267" selection-end-column="23" />
+            <state relative-caret-position="162">
+              <caret line="256" column="14" lean-forward="true" selection-start-line="256" selection-start-column="14" selection-end-line="256" selection-end-column="14" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <element signature="e#384#827#0" expanded="false" />
-                <element signature="e#613#827#0" expanded="false" />
-                <element signature="e#1490#2025#0" expanded="false" />
-                <element signature="e#2161#4748#0" expanded="false" />
-                <element signature="e#2488#3141#0" expanded="false" />
-                <element signature="e#3222#4330#0" expanded="false" />
-                <element signature="e#4952#5033#0" expanded="false" />
-                <element signature="e#5063#7689#0" expanded="false" />
-                <element signature="e#7733#7789#0" expanded="false" />
-                <element signature="e#7862#8220#0" expanded="false" />
-                <element signature="e#8265#8545#0" expanded="false" />
-                <element signature="e#8583#9140#0" expanded="false" />
+                <element signature="e#646#860#0" expanded="false" />
+                <element signature="e#1523#2058#0" expanded="false" />
+                <element signature="e#4559#4641#0" expanded="false" />
+                <element signature="e#4698#4779#0" expanded="false" />
+                <element signature="e#7147#7203#0" expanded="false" />
+                <element signature="e#7276#7634#0" expanded="false" />
+                <element signature="e#8054#8611#0" expanded="false" />
+                <marker date="1503716925483" expanded="false" signature="7697:7986" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="compare_LunarLanderContinuous-v2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/compare_LunarLanderContinuous-v2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="232" column="4" lean-forward="false" selection-start-line="232" selection-start-column="4" selection-end-line="232" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#647#861#0" expanded="false" />
+                <element signature="e#1524#2059#0" expanded="false" />
+                <element signature="e#4707#4788#0" expanded="false" />
+                <element signature="e#7438#7494#0" expanded="false" />
+                <element signature="e#7567#7925#0" expanded="false" />
+                <element signature="e#8345#8902#0" expanded="false" />
+                <marker date="1503716925467" expanded="false" signature="7988:8277" ph="..." />
               </folding>
             </state>
           </provider>
@@ -128,9 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>float32</find>
-      <find>[state</find>
-      <find>Adam</find>
       <find>InvalidArgumentError: You must feed a value for placeholder tensor</find>
       <find>True</find>
       <find>gamma</find>
@@ -158,6 +148,9 @@
       <find>490</find>
       <find>526</find>
       <find>train</find>
+      <find>is_T</find>
+      <find>is_Tai</find>
+      <find>is_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -173,15 +166,15 @@
         <option value="$PROJECT_DIR$/333333.py" />
         <option value="$PROJECT_DIR$/demo.py" />
         <option value="$PROJECT_DIR$/test2_update.py" />
-        <option value="$PROJECT_DIR$/run_MoutainCarContiunuous_v0.py" />
         <option value="$PROJECT_DIR$/test_Lunar.py" />
         <option value="$PROJECT_DIR$/1111.py" />
         <option value="$PROJECT_DIR$/2222222.py" />
         <option value="$PROJECT_DIR$/test_LunarLanderContinuous-v2.py" />
-        <option value="$PROJECT_DIR$/run_LunarLanderContinuous-v2.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/compare_LunarLanderContinuous-v2.py" />
         <option value="$PROJECT_DIR$/compare_MountaiCarContinuous-v0.py" />
+        <option value="$PROJECT_DIR$/run_LunarLanderContinuous-v2.py" />
+        <option value="$PROJECT_DIR$/run_MoutainCarContiunuous_v0.py" />
       </list>
     </option>
   </component>
@@ -246,7 +239,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.compare_MountaiCarContinuous-v0">
+  <component name="RunManager" selected="Python.test_LunarLanderContinuous-v2">
     <configuration name="compare_LunarLanderContinuous-v2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -346,8 +339,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.compare_MountaiCarContinuous-v0" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test_LunarLanderContinuous-v2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test_LunarLanderContinuous-v2" />
+        <item index="1" class="java.lang.String" itemvalue="Python.compare_MountaiCarContinuous-v0" />
         <item index="2" class="java.lang.String" itemvalue="Python.run_MoutainCarContiunuous_v0" />
         <item index="3" class="java.lang.String" itemvalue="Python.compare_LunarLanderContinuous-v2" />
         <item index="4" class="java.lang.String" itemvalue="Python.test" />
@@ -412,7 +405,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="64" />
+      <option name="time" value="70" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -424,17 +417,11 @@
         <state relative-caret-position="2790">
           <caret line="175" column="37" lean-forward="true" selection-start-line="175" selection-start-column="37" selection-end-line="175" selection-end-column="37" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#251#6984#0" expanded="false" />
-            <element signature="e#385#560#0" expanded="false" />
-            <element signature="e#1178#1713#0" expanded="false" />
-            <element signature="e#2078#2731#0" expanded="false" />
-            <element signature="e#2812#3921#0" expanded="false" />
-            <element signature="e#4404#4491#0" expanded="false" />
-            <element signature="e#4548#4634#0" expanded="false" />
-            <element signature="e#4664#6573#0" expanded="false" />
-            <element signature="e#6617#6678#0" expanded="false" />
-            <element signature="e#6750#6984#0" expanded="false" />
+            <element signature="e#86#109#0" expanded="true" />
+            <element signature="e#472#647#0" expanded="false" />
+            <element signature="e#1282#1817#0" expanded="false" />
+            <element signature="e#4219#4306#0" expanded="false" />
+            <element signature="e#4363#4449#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -580,81 +567,65 @@
     <entry file="file://$PROJECT_DIR$/1111.py" />
     <entry file="file://$PROJECT_DIR$/run_MoutainCarContiunuous_v0.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="-1249">
+          <caret line="192" column="35" lean-forward="false" selection-start-line="192" selection-start-column="35" selection-end-line="192" selection-end-column="35" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#251#6984#0" expanded="false" />
-            <element signature="e#385#560#0" expanded="false" />
-            <element signature="e#1178#1713#0" expanded="false" />
-            <element signature="e#2078#2731#0" expanded="false" />
-            <element signature="e#2812#3921#0" expanded="false" />
-            <element signature="e#4404#4491#0" expanded="false" />
-            <element signature="e#4548#4634#0" expanded="false" />
-            <element signature="e#4664#6573#0" expanded="false" />
-            <element signature="e#6617#6678#0" expanded="false" />
-            <element signature="e#6750#6984#0" expanded="false" />
+            <element signature="e#86#109#0" expanded="true" />
+            <element signature="e#472#647#0" expanded="false" />
+            <element signature="e#1282#1817#0" expanded="false" />
+            <element signature="e#4219#4306#0" expanded="false" />
+            <element signature="e#4363#4449#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run_LunarLanderContinuous-v2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="174" column="23" lean-forward="true" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
+        <state relative-caret-position="220">
+          <caret line="199" column="18" lean-forward="true" selection-start-line="199" selection-start-column="18" selection-end-line="199" selection-end-column="18" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#348#1712#0" expanded="false" />
-            <element signature="e#384#559#0" expanded="false" />
-            <element signature="e#2077#2730#0" expanded="false" />
-            <element signature="e#2811#3929#0" expanded="false" />
-            <element signature="e#4412#4499#0" expanded="false" />
-            <element signature="e#4556#4642#0" expanded="false" />
-            <element signature="e#6877#6938#0" expanded="false" />
-            <element signature="e#7373#8485#0" expanded="false" />
-            <element signature="e#8504#9669#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compare_LunarLanderContinuous-v2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="267" column="23" lean-forward="true" selection-start-line="267" selection-start-column="23" selection-end-line="267" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#384#827#0" expanded="false" />
-            <element signature="e#613#827#0" expanded="false" />
-            <element signature="e#1490#2025#0" expanded="false" />
-            <element signature="e#2161#4748#0" expanded="false" />
-            <element signature="e#2488#3141#0" expanded="false" />
-            <element signature="e#3222#4330#0" expanded="false" />
-            <element signature="e#4952#5033#0" expanded="false" />
-            <element signature="e#5063#7689#0" expanded="false" />
-            <element signature="e#7733#7789#0" expanded="false" />
-            <element signature="e#7862#8220#0" expanded="false" />
-            <element signature="e#8265#8545#0" expanded="false" />
-            <element signature="e#8583#9140#0" expanded="false" />
+            <element signature="e#86#109#0" expanded="true" />
+            <element signature="e#471#646#0" expanded="false" />
+            <element signature="e#1281#1816#0" expanded="false" />
+            <element signature="e#4227#4314#0" expanded="false" />
+            <element signature="e#4371#4457#0" expanded="false" />
+            <element signature="e#4487#6729#0" expanded="false" />
+            <element signature="e#4708#6265#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/compare_MountaiCarContinuous-v0.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="971">
-          <caret line="245" column="12" lean-forward="false" selection-start-line="245" selection-start-column="12" selection-end-line="245" selection-end-column="12" />
+        <state relative-caret-position="162">
+          <caret line="256" column="14" lean-forward="true" selection-start-line="256" selection-start-column="14" selection-end-line="256" selection-end-column="14" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#612#826#0" expanded="false" />
-            <element signature="e#1489#2024#0" expanded="false" />
-            <element signature="e#2161#4749#0" expanded="false" />
-            <element signature="e#2488#3141#0" expanded="false" />
-            <element signature="e#3222#4331#0" expanded="false" />
-            <element signature="e#4814#4896#0" expanded="false" />
-            <element signature="e#4953#5034#0" expanded="false" />
-            <element signature="e#5064#7408#0" expanded="false" />
-            <element signature="e#7452#7508#0" expanded="false" />
-            <element signature="e#7581#7939#0" expanded="false" />
+            <element signature="e#646#860#0" expanded="false" />
+            <element signature="e#1523#2058#0" expanded="false" />
+            <element signature="e#4559#4641#0" expanded="false" />
+            <element signature="e#4698#4779#0" expanded="false" />
+            <element signature="e#7147#7203#0" expanded="false" />
+            <element signature="e#7276#7634#0" expanded="false" />
+            <element signature="e#8054#8611#0" expanded="false" />
+            <marker date="1503716925483" expanded="false" signature="7697:7986" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compare_LunarLanderContinuous-v2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="232" column="4" lean-forward="false" selection-start-line="232" selection-start-column="4" selection-end-line="232" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#647#861#0" expanded="false" />
+            <element signature="e#1524#2059#0" expanded="false" />
+            <element signature="e#4707#4788#0" expanded="false" />
+            <element signature="e#7438#7494#0" expanded="false" />
+            <element signature="e#7567#7925#0" expanded="false" />
+            <element signature="e#8345#8902#0" expanded="false" />
+            <marker date="1503716925467" expanded="false" signature="7988:8277" ph="..." />
           </folding>
         </state>
       </provider>
