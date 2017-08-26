@@ -44,6 +44,8 @@ class A3CWorker:
             self.c_grads = tf.gradients(self.c_loss, self.c_params)
             self.update_a_op = self.gAC.a_optimizer.apply_gradients(zip(self.a_grads, self.gAC.a_params))
             self.update_c_op = self.gAC.c_optimizer.apply_gradients(zip(self.c_grads, self.gAC.c_params))
+        if name == global_name2:
+            self.c_train = self.c_optimizer.minimize(self.c_loss)
 
     def _build_model(self):
         # input
@@ -219,11 +221,11 @@ class A3CWorker:
             action.append(ban[1])
             R.append(ban[2])
         feed_dict = {
-            self.state: np.vstack(state),
-            self.action_train: np.array(action),
-            self.target: np.vstack(R)
+            self.gAC.state: np.vstack(state),
+            self.gAC.action_train: np.array(action),
+            self.gAC.target: np.vstack(R)
         }
-        SESS.run(self.update_c_op, feed_dict=feed_dict)
+        SESS.run(self.gAC.c_train, feed_dict=feed_dict)
 
 
 if __name__ == "__main__":

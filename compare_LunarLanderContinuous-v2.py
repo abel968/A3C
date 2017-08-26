@@ -146,7 +146,7 @@ class A3CWorker:
                     import math
                     reward1 = (math.fabs(state_his[0]) - math.fabs(state[0]))
                     reward1 += (math.fabs(state_his[1]) - math.fabs(state[1]))
-                    reward1 += (state_his[2] ** 2 + state_his[3] ** 2) - (state[2] ** 2 + state[3] ** 2)
+                    reward1 += (state_his[2]**2 + state_his[3]**2) - (state[2]**2 + state[3]**2)
                     reward1 += (math.fabs(state_his[4]) - math.fabs(state[4]))
                     buffer_r.append(reward1)
 
